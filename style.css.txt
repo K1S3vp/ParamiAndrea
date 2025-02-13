@@ -1,0 +1,159 @@
+body {
+    background-color: #ADD8E6;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.falling-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+}
+
+.couple-img {
+    width: 200px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#yes {
+    background-color: green;
+    color: white;
+}
+
+#no {
+    background-color: red;
+    color: white;
+}
+
+/* Fondo de carta */
+.letter-container {
+  width: 80%;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #f8e8d1, #f7e4c1);
+  border: 2px solid #d5b297;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-family: 'Georgia', serif;
+}
+
+/* Estilo del texto */
+.letter-content {
+  padding: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.letter-text {
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Botón de "Leer texto cursi" */
+.read-more-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #e63946;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #d62828;
+}
+
+/* Animación de lluvia de corazones */
+.falling-hearts .heart {
+  position: absolute;
+  font-size: 25px;
+  color: #e63946;
+  animation: fall 5s linear infinite;
+  opacity: 0;
+}
+
+@keyframes fall {
+  0% {
+    top: -10%;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* Estilos para crear una lluvia de corazones */
+@keyframes heart-fall {
+  0% {
+    left: random(0, 100%);
+    top: -10%;
+    opacity: 1;
+  }
+  100% {
+    left: random(0, 100%);
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* Para generar las animaciones de corazones en el contenedor */
+.falling-hearts {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#no {
+    background-color: red;
+    color: white;
+    position: relative;  /* Necesario para mover el botón */
+    transition: transform 0.2s ease; /* Para una transición suave al mover el botón */
+}
+
+#no:hover {
+    cursor: pointer;
+}
+
+/* Cuando el ratón se acerca al botón */
+#no.avoid {
+    transform: translate(50px, -50px); /* Alejar el botón de la posición original */
+}
+

@@ -1,0 +1,31 @@
+document.addEventListener("DOMContentLoaded", function() {
+    let musica = document.getElementById("musica");
+    musica.play().catch(() => {
+        console.log("El navegador bloqueó la reproducción automática. Andrea deberá tocar la pantalla para activarla.");
+    });
+
+    let noButton = document.getElementById("no");
+
+    noButton.addEventListener("click", function() {
+        noButton.textContent = "Sí";
+        noButton.style.backgroundColor = "green";
+    });
+
+    document.getElementById("yes").addEventListener("click", function() {
+        document.body.innerHTML = `
+            <div class="container">
+                <h1>¡Sabía que dirías que sí! 💖</h1>
+                <p>Eres la mejor, Andrea. ¡Te quiero muchísimo! 💕</p>
+                <img src="sorpresa.png" alt="Sorpresa animada" class="couple-img">
+            </div>
+        `;
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    let musica = document.getElementById("musica");
+
+    musica.play().catch(() => {
+        console.log("El navegador bloqueó la reproducción automática. Andrea deberá tocar la pantalla para activarla.");
+    });
+});
